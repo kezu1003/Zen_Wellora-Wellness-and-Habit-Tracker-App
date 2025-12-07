@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment_hydration_reminder">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_primary"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Header with Water Animation -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginBottom="30dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="💧"
+                    android:textSize="60sp"
+                    tools:ignore="HardcodedText,TextContrastCheck" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hydration Reminder"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Stay hydrated throughout your day"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="16sp"
+                    tools:ignore="HardcodedText,TextContrastCheck" />
+
+            </LinearLayout>
+
+            <!-- Main Toggle Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp"
+                    android:background="@drawable/gradient_hydration">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Hydration Reminders"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/tvReminderStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:alpha="0.9"
+                            android:text="Currently inactive"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchReminderEnabled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:thumbTint="@color/white"
+                        android:trackTint="@color/primary_light"
+                        android:checked="false" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Reminder Configuration Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardConfiguration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Interval Section -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="⏰ Reminder Interval"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_marginBottom="12dp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="How often would you like to be reminded to drink water?"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText,TextContrastCheck" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvIntervals"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp" />
+
+                    <!-- Active Hours Section -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="🌞 Active Hours"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_marginBottom="12dp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="Set the time range when you want to receive reminders"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText,TextContrastCheck" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <!-- Start Time -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="center"
+                                android:text="Start Time"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="14sp"
+                                tools:ignore="HardcodedText,TextContrastCheck" />
+
+                            <Button
+                                android:id="@+id/btnStartTime"
+                                android:layout_width="140dp"
+                                android:layout_height="50dp"
+                                android:background="@drawable/button_rounded_enhanced"
+                                android:text="08:00 AM"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:padding="8dp"
+                                tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        </LinearLayout>
+
+                        <!-- To Text -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:text="to"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        <!-- End Time -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="center"
+                                android:text="End Time"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="14sp"
+                                tools:ignore="HardcodedText,TextContrastCheck" />
+
+                            <Button
+                                android:id="@+id/btnEndTime"
+                                android:layout_width="140dp"
+                                android:layout_height="50dp"
+                                android:background="@drawable/button_rounded_enhanced"
+                                android:text="08:00 PM"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:padding="8dp"
+                                tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Current Schedule Summary -->
+                    <TextView
+                        android:id="@+id/tvScheduleSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Reminders: Every 2 hours from 8:00 AM to 8:00 PM"
+                        android:textSize="13sp"
+                        android:textColor="@color/success"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:background="@drawable/success_background"
+                        android:layout_marginTop="16dp"
+                        android:visibility="visible"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Water Goal Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="🎯 Daily Water Goal"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_marginBottom="12dp"
+                        tools:ignore="HardcodedText" />
+
+                    <SeekBar
+                        android:id="@+id/seekBarWaterGoal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="12"
+                        android:progress="8"
+                        android:progressTint="@color/accent"
+                        android:thumbTint="@color/accent"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Goal:"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="14sp"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        <TextView
+                            android:id="@+id/tvWaterGoal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="8 glasses"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/accent"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Save Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSaveReminder"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/gradient_button_background"
+                android:text="💾 Save Hydration Settings"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:elevation="4dp"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

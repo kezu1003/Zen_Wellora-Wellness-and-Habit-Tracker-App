@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment_about_help">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_primary"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header Section with App Icon -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/gradient_about_header"
+                android:padding="20dp">
+
+                <!-- App Icon/Logo -->
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:gravity="center"
+                    android:text="🌿"
+                    android:textSize="50sp"
+                    android:background="@drawable/circle_app_icon"
+                    android:layout_marginBottom="16dp"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
+                    android:text="Zen Wellora"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvAppVersion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:alpha="0.9"
+                    android:gravity="center"
+                    android:text="Version 1.0.0"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    tools:ignore="HardcodedText,TextContrastCheck" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingHorizontal="20dp"
+                    android:text="Your Personal Wellness Companion"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText,TextContrastCheck" />
+
+            </LinearLayout>
+
+            <!-- Quick Actions -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:background="@color/white">
+
+                <Button
+                    android:id="@+id/btnQuickGuide"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_rounded"
+                    android:backgroundTint="@color/primary_light"
+                    android:gravity="center"
+                    android:text="📚\nQuick Guide"
+                    android:textColor="@color/primary"
+                    android:textSize="14sp"
+                    tools:ignore="ButtonStyle,HardcodedText,VisualLintButtonSize,TextContrastCheck" />
+
+                <Button
+                    android:id="@+id/btnContactSupport"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_rounded"
+                    android:backgroundTint="@color/accent_light"
+                    android:gravity="center"
+                    android:text="💬\nContact Support"
+                    android:textColor="@color/accent_dark"
+                    android:textSize="14sp"
+                    tools:ignore="ButtonStyle,HardcodedText,VisualLintButtonSize,TextContrastCheck" />
+
+            </LinearLayout>
+
+            <!-- App Information Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="📱 App Information"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_marginBottom="16dp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- App Description -->
+
+                    <!-- Features List -->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:lineSpacingExtra="4dp"
+                        android:text="Zen Wellora helps you build healthy habits, track your mood, and stay hydrated throughout the day. Our mission is to support your wellness journey with simple, intuitive tools."
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText,VisualLintLongText,TextContrastCheck" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="✨ Key Features:"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_marginBottom="8dp"
+                        tools:ignore="HardcodedText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="20dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:text="• Daily habit tracking and progress monitoring"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="14sp"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:text="• Mood journal with emoji selection"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="14sp"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:text="• Smart hydration reminders"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="14sp"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="• Beautiful charts and insights"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="14sp"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                    </LinearLayout>
+
+                    <!-- Technical Info -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="🔧 Technical Information"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_marginBottom="8dp"
+                        tools:ignore="HardcodedText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="4dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Version:"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_primary"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/tvVersionDetail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1.0.0 (Build 1001)"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_secondary"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="4dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Last Updated:"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_primary"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/tvLastUpdated"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="January 2024"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_secondary"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Developer:"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_primary"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/tvDeveloper"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Zen Wellora Team"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_secondary"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Usage Instructions Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="🎯 Getting Started"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_marginBottom="16dp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Step 1 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:background="@drawable/step_number"
+                            android:layout_marginEnd="12dp"
+                            tools:ignore="HardcodedText" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Set Up Your Habits"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary"
+                                android:layout_marginBottom="4dp"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Go to Habits tab and add your daily wellness routines like meditation, exercise, or reading."
+                                android:textSize="14sp"
+                                android:textColor="@color/text_secondary"
+                                android:lineSpacingExtra="4dp"
+                                tools:ignore="HardcodedText" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Step 2 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="2"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:background="@drawable/step_number"
+                            android:layout_marginEnd="12dp"
+                            tools:ignore="HardcodedText" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Track Your Mood"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary"
+                                android:layout_marginBottom="4dp"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Use the Mood Journal to log how you're feeling each day with emojis and notes."
+                                android:textSize="14sp"
+                                android:textColor="@color/text_secondary"
+                                android:lineSpacingExtra="4dp"
+                                tools:ignore="HardcodedText" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Step 3 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="3"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:background="@drawable/step_number"
+                            android:layout_marginEnd="12dp"
+                            tools:ignore="HardcodedText" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Enable Hydration Reminders"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary"
+                                android:layout_marginBottom="4dp"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Set up water reminders in Settings to stay hydrated throughout the day."
+                                android:textSize="14sp"
+                                android:textColor="@color/text_secondary"
+                                android:lineSpacingExtra="4dp"
+                                tools:ignore="HardcodedText" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Step 4 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="4"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:background="@drawable/step_number"
+                            android:layout_marginEnd="12dp"
+                            tools:ignore="HardcodedText" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Review Your Progress"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary"
+                                android:layout_marginBottom="4dp"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Check your statistics and charts to see your wellness journey over time."
+                                android:textSize="14sp"
+                                android:textColor="@color/text_secondary"
+                                android:lineSpacingExtra="4dp"
+                                tools:ignore="HardcodedText" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Support & Links Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="🔗 Support &amp; Links"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_marginBottom="16dp"
+                        tools:ignore="HardcodedText" />
+
+                    <Button
+                        android:id="@+id/btnPrivacyPolicy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="📄 Privacy Policy"
+                        android:textSize="14sp"
+                        android:backgroundTint="@color/primary_light"
+                        android:textColor="@color/primary"
+                        android:background="@drawable/button_rounded"
+                        android:layout_marginBottom="8dp"
+                        tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+                    <Button
+                        android:id="@+id/btnTermsOfService"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="📝 Terms of Service"
+                        android:textSize="14sp"
+                        android:backgroundTint="@color/primary_light"
+                        android:textColor="@color/primary"
+                        android:background="@drawable/button_rounded"
+                        android:layout_marginBottom="8dp"
+                        tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+                    <Button
+                        android:id="@+id/btnRateApp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="⭐ Rate Zen Wellora"
+                        android:textSize="14sp"
+                        android:backgroundTint="@color/accent_light"
+                        android:textColor="@color/accent_dark"
+                        android:background="@drawable/button_rounded"
+                        android:layout_marginBottom="8dp"
+                        tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+                    <Button
+                        android:id="@+id/btnShareApp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="📤 Share with Friends"
+                        android:textSize="14sp"
+                        android:backgroundTint="@color/accent_light"
+                        android:textColor="@color/accent_dark"
+                        android:background="@drawable/button_rounded"
+                        tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

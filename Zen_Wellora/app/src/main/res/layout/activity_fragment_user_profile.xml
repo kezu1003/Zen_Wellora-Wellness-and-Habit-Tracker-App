@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment_user_profile">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_primary"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Profile Header with Cover Photo -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:background="@drawable/gradient_profile_header">
+
+                <!-- Back Arrow -->
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/back_arrow"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="Back"
+                    android:tint="@color/white"
+                    tools:ignore="HardcodedText" />
+
+                <!-- Cover Photo Area -->
+                <ImageView
+                    android:id="@+id/ivCoverPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:contentDescription="Cover photo"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_cover"
+                    tools:ignore="HardcodedText,ImageContrastCheck" />
+
+                <!-- Profile Photo -->
+                <RelativeLayout
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="30dp">
+
+                    <ImageView
+                        android:id="@+id/ivProfilePhoto"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/default_profile"
+                        android:background="@drawable/profile_photo_border"
+                        android:contentDescription="Profile photo"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Edit Profile Photo Button -->
+                    <ImageButton
+                        android:id="@+id/btnEditPhoto"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/circle_accent"
+                        android:contentDescription="Edit photo"
+                        android:src="@drawable/ic_edit"
+                        tools:ignore="HardcodedText,TouchTargetSizeCheck,ImageContrastCheck" />
+
+                </RelativeLayout>
+
+                <!-- Edit Cover Button -->
+                <ImageButton
+                    android:id="@+id/btnEditCover"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/circle_primary_transparent"
+                    android:contentDescription="Edit cover"
+                    android:src="@drawable/ic_edit_white"
+                    tools:ignore="HardcodedText,ImageContrastCheck,TouchTargetSizeCheck" />
+
+            </RelativeLayout>
+
+            <!-- Profile Info Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginTop="-60dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <!-- Name and Edit Button -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/tvUserName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Alex Johnson"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/primary"
+                            tools:ignore="HardcodedText" />
+
+                        <Button
+                            android:id="@+id/btnEditProfile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:background="@drawable/button_rounded_enhanced"
+                            android:text="✏️ Edit Profile"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:padding="8dp"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                    </LinearLayout>
+
+                    <!-- Bio -->
+                    <TextView
+                        android:id="@+id/tvUserBio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:lineSpacingExtra="4dp"
+                        android:text="Wellness enthusiast on a journey to better health and mindfulness. Love yoga, meditation, and staying hydrated! 💧"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText,TextContrastCheck" />
+
+                    <!-- Stats Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="20dp">
+
+                        <!-- Streak Stat -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvStreakCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="42"
+                                android:textColor="@color/accent"
+                                android:textSize="28sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText,TextContrastCheck" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Day Streak"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp"
+                                tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        </LinearLayout>
+
+                        <!-- Habits Stat -->
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:background="@color/primary_light" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvHabitsCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="8"
+                                android:textSize="28sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Active Habits"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp"
+                                tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        </LinearLayout>
+
+                        <!-- Moods Stat -->
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:background="@color/primary_light" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvMoodsCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="127"
+                                android:textSize="28sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/gradient_end"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Moods Logged"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp"
+                                tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Join Date -->
+                    <TextView
+                        android:id="@+id/tvJoinDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Member since January 2024"
+                        android:textColor="@color/text_hint"
+                        android:textSize="12sp"
+                        tools:ignore="HardcodedText,TextContrastCheck" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Personal Information Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="👤 Personal Information"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_marginBottom="16dp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Email -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:text="Email:"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/tvEmail"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="alex.johnson@email.com"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="14sp"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                    </LinearLayout>
+
+                    <!-- Wellness Goals -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:text="Goals:"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/tvWellnessGoals"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Meditation, Hydration, Exercise"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="14sp"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                    </LinearLayout>
+
+                    <!-- Daily Water Goal -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:text="Water Goal:"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText,TextSizeCheck" />
+
+                        <TextView
+                            android:id="@+id/tvWaterGoal"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="8 glasses per day"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="14sp"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                    </LinearLayout>
+
+                    <!-- Notification Preferences -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:text="Notifications:"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/tvNotificationPrefs"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Enabled for all reminders"
+                            android:textColor="@color/success"
+                            android:textSize="14sp"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Logout Button -->
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="🚪 Logout"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:background="@drawable/button_rounded_error_enhanced"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:layout_margin="16dp"
+                android:layout_marginTop="8dp"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

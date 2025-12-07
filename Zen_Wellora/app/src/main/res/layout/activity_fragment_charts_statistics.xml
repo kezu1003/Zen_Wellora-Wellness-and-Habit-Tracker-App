@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment_charts_statistics">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_primary"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Header with Back Arrow -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp">
+
+                <!-- Back Arrow -->
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/back_arrow"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="Back"
+                    android:tint="@color/primary"
+                    tools:ignore="HardcodedText" />
+
+                <!-- Title Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📊"
+                        android:textSize="50sp"
+                        android:layout_marginBottom="8dp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Wellness Analytics"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:gravity="center"
+                        android:layout_marginBottom="8dp"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Track your progress and insights"
+                android:textColor="@color/text_secondary"
+                android:textSize="16sp"
+                android:layout_marginBottom="16dp"
+                tools:ignore="HardcodedText,TextContrastCheck" />
+
+            <!-- Time Range Selector -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <Button
+                        android:id="@+id/btnWeek"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_rounded_small"
+                        android:backgroundTint="@color/accent"
+                        android:text="Week"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        tools:ignore="ButtonStyle,HardcodedText,VisualLintButtonSize,TouchTargetSizeCheck" />
+
+                    <Button
+                        android:id="@+id/btnMonth"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_rounded_small"
+                        android:backgroundTint="@color/primary_light"
+                        android:text="Month"
+                        android:textColor="@color/primary"
+                        android:textSize="12sp"
+                        tools:ignore="ButtonStyle,HardcodedText,VisualLintButtonSize,TextContrastCheck,TouchTargetSizeCheck" />
+
+                    <Button
+                        android:id="@+id/btnQuarter"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_rounded_small"
+                        android:backgroundTint="@color/primary_light"
+                        android:text="3 Months"
+                        android:textColor="@color/primary"
+                        android:textSize="12sp"
+                        tools:ignore="ButtonStyle,HardcodedText,VisualLintButtonSize,TextContrastCheck,TouchTargetSizeCheck" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Mood Trends Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Header -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="😊 Mood Trends"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/primary"
+                            tools:ignore="HardcodedText" />
+
+                        <Spinner
+                            android:id="@+id/spinnerMoodChartType"
+                            android:layout_width="120dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/spinner_background"
+                            android:padding="8dp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                    </LinearLayout>
+
+                    <!-- Mood Progress Bars Container -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:background="@drawable/chart_background"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Daily Mood Progress (1-10)"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginBottom="16dp"
+                            android:gravity="center" />
+
+                        <!-- Monday -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="8dp">
+
+                            <TextView
+                                android:layout_width="40dp"
+                                android:layout_height="wrap_content"
+                                android:text="Mon"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_secondary" />
+
+                            <ProgressBar
+                                android:id="@+id/progressMon"
+                                android:layout_width="0dp"
+                                android:layout_height="12dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                style="@android:style/Widget.ProgressBar.Horizontal"
+                                android:progressTint="@color/success"
+                                android:progressBackgroundTint="@color/primary_light"
+                                android:progress="70"
+                                android:max="10" />
+
+                            <TextView
+                                android:id="@+id/tvMonScore"
+                                android:layout_width="30dp"
+                                android:layout_height="wrap_content"
+                                android:text="7/10"
+                                android:textSize="10sp"
+                                android:textColor="@color/text_secondary" />
+
+                        </LinearLayout>
+
+                        <!-- Tuesday -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="8dp">
+
+                            <TextView
+                                android:layout_width="40dp"
+                                android:layout_height="wrap_content"
+                                android:text="Tue"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_secondary" />
+
+                            <ProgressBar
+                                android:id="@+id/progressTue"
+                                android:layout_width="0dp"
+                                android:layout_height="12dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                style="@android:style/Widget.ProgressBar.Horizontal"
+                                android:progressTint="@color/success"
+                                android:progressBackgroundTint="@color/primary_light"
+                                android:progress="80"
+                                android:max="10" />
+
+                            <TextView
+                                android:id="@+id/tvTueScore"
+                                android:layout_width="30dp"
+                                android:layout_height="wrap_content"
+                                android:text="8/10"
+                                android:textSize="10sp"
+                                android:textColor="@color/text_secondary" />
+
+                        </LinearLayout>
+
+                        <!-- Wednesday -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="8dp">
+
+                            <TextView
+                                android:layout_width="40dp"
+                                android:layout_height="wrap_content"
+                                android:text="Wed"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_secondary" />
+
+                            <ProgressBar
+                                android:id="@+id/progressWed"
+                                android:layout_width="0dp"
+                                android:layout_height="12dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                style="@android:style/Widget.ProgressBar.Horizontal"
+                                android:progressTint="@color/warning"
+                                android:progressBackgroundTint="@color/primary_light"
+                                android:progress="60"
+                                android:max="10" />
+
+                            <TextView
+                                android:id="@+id/tvWedScore"
+                                android:layout_width="30dp"
+                                android:layout_height="wrap_content"
+                                android:text="6/10"
+                                android:textSize="10sp"
+                                android:textColor="@color/text_secondary" />
+
+                        </LinearLayout>
+
+                        <!-- Thursday -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="8dp">
+
+                            <TextView
+                                android:layout_width="40dp"
+                                android:layout_height="wrap_content"
+                                android:text="Thu"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_secondary" />
+
+                            <ProgressBar
+                                android:id="@+id/progressThu"
+                                android:layout_width="0dp"
+                                android:layout_height="12dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                style="@android:style/Widget.ProgressBar.Horizontal"
+                                android:progressTint="@color/success"
+                                android:progressBackgroundTint="@color/primary_light"
+                                android:progress="90"
+                                android:max="10" />
+
+                            <TextView
+                                android:id="@+id/tvThuScore"
+                                android:layout_width="30dp"
+                                android:layout_height="wrap_content"
+                                android:text="9/10"
+                                android:textSize="10sp"
+                                android:textColor="@color/text_secondary" />
+
+                        </LinearLayout>
+
+                        <!-- Friday -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="8dp">
+
+                            <TextView
+                                android:layout_width="40dp"
+                                android:layout_height="wrap_content"
+                                android:text="Fri"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_secondary" />
+
+                            <ProgressBar
+                                android:id="@+id/progressFri"
+                                android:layout_width="0dp"
+                                android:layout_height="12dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                style="@android:style/Widget.ProgressBar.Horizontal"
+                                android:progressTint="@color/success"
+                                android:progressBackgroundTint="@color/primary_light"
+                                android:progress="70"
+                                android:max="10" />
+
+                            <TextView
+                                android:id="@+id/tvFriScore"
+                                android:layout_width="30dp"
+                                android:layout_height="wrap_content"
+                                android:text="7/10"
+                                android:textSize="10sp"
+                                android:textColor="@color/text_secondary" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Mood Statistics -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvAvgMood"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="😊"
+                                android:textSize="24sp"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Average"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp"
+                                tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:background="@color/primary_light" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvBestMood"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="😄"
+                                android:textSize="24sp"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Best Day"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp"
+                                tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:background="@color/primary_light" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvMoodConsistency"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="85%"
+                                android:textColor="@color/success"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText,TextContrastCheck" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consistency"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp"
+                                tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Habit Completion Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="✅ Habit Completion"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_marginBottom="16dp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Habit Progress Visualization -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="@drawable/chart_background"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Habit Completion Rate"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginBottom="16dp"
+                            android:gravity="center" />
+
+                        <!-- Meditation -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="4dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Meditation"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/text_primary" />
+
+                                <TextView
+                                    android:id="@+id/tvMeditationPercent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="85%"
+                                    android:textColor="@color/success"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                            <ProgressBar
+                                android:id="@+id/progressMeditation"
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp"
+                                style="@android:style/Widget.ProgressBar.Horizontal"
+                                android:progressTint="@color/success"
+                                android:progressBackgroundTint="@color/primary_light"
+                                android:progress="85" />
+
+                        </LinearLayout>
+
+                        <!-- Exercise -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="4dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Exercise"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/text_primary" />
+
+                                <TextView
+                                    android:id="@+id/tvExercisePercent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="70%"
+                                    android:textColor="@color/warning"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                            <ProgressBar
+                                android:id="@+id/progressExercise"
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp"
+                                style="@android:style/Widget.ProgressBar.Horizontal"
+                                android:progressTint="@color/warning"
+                                android:progressBackgroundTint="@color/primary_light"
+                                android:progress="70" />
+
+                        </LinearLayout>
+
+                        <!-- Reading -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="4dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Reading"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/text_primary" />
+
+                                <TextView
+                                    android:id="@+id/tvReadingPercent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="90%"
+                                    android:textColor="@color/success"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                            <ProgressBar
+                                android:id="@+id/progressReading"
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp"
+                                style="@android:style/Widget.ProgressBar.Horizontal"
+                                android:progressTint="@color/success"
+                                android:progressBackgroundTint="@color/primary_light"
+                                android:progress="90" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Habit Statistics -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvCompletionRate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="78%"
+                                android:textColor="@color/accent"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText,TextContrastCheck" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Completion Rate"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp"
+                                tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:background="@color/primary_light" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvCurrentStreak"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="14"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Day Streak"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp"
+                                tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:background="@color/primary_light" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvTotalCompleted"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="127"
+                                android:textColor="@color/success"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText,TextContrastCheck" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Completed"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp"
+                                tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Progress Visualization Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="📈 Progress Overview"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_marginBottom="16dp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Progress Bars for Each Habit -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Daily Habits Performance:"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="12dp"
+                        tools:ignore="HardcodedText" />
+
+                    <LinearLayout
+                        android:id="@+id/layoutHabitProgress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- Habit Progress Item 1 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="4dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Morning Meditation"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/text_primary"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="85%"
+                                    android:textColor="@color/success"
+                                    android:textSize="12sp"
+                                    tools:ignore="HardcodedText,TextContrastCheck" />
+
+                            </LinearLayout>
+
+                            <ProgressBar
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp"
+                                style="@android:style/Widget.ProgressBar.Horizontal"
+                                android:progressTint="@color/success"
+                                android:progressBackgroundTint="@color/primary_light"
+                                android:progress="85" />
+
+                        </LinearLayout>
+
+                        <!-- Habit Progress Item 2 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="4dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Water Intake"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/text_primary"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="92%"
+                                    android:textColor="@color/success"
+                                    android:textSize="12sp"
+                                    tools:ignore="HardcodedText,TextContrastCheck" />
+
+                            </LinearLayout>
+
+                            <ProgressBar
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp"
+                                style="@android:style/Widget.ProgressBar.Horizontal"
+                                android:progressTint="@color/accent"
+                                android:progressBackgroundTint="@color/primary_light"
+                                android:progress="92" />
+
+                        </LinearLayout>
+
+                        <!-- Habit Progress Item 3 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="4dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Evening Walk"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/text_primary"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="65%"
+                                    android:textColor="@color/warning"
+                                    android:textSize="12sp"
+                                    tools:ignore="HardcodedText,TextContrastCheck" />
+
+                            </LinearLayout>
+
+                            <ProgressBar
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp"
+                                style="@android:style/Widget.ProgressBar.Horizontal"
+                                android:progressTint="@color/warning"
+                                android:progressBackgroundTint="@color/primary_light"
+                                android:progress="65" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Weekly Progress Summary -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Weekly Progress Summary:"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="12dp"
+                        tools:ignore="HardcodedText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:background="@drawable/chart_background"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Overall Progress"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginBottom="16dp"
+                            android:gravity="center" />
+
+                        <!-- Overall Progress -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="4dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Weekly Completion"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/text_primary" />
+
+                                <TextView
+                                    android:id="@+id/tvWeeklyCompletion"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="78%"
+                                    android:textColor="@color/success"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                            <ProgressBar
+                                android:id="@+id/progressWeeklyOverall"
+                                android:layout_width="match_parent"
+                                android:layout_height="12dp"
+                                style="@android:style/Widget.ProgressBar.Horizontal"
+                                android:progressTint="@color/accent"
+                                android:progressBackgroundTint="@color/primary_light"
+                                android:progress="78" />
+
+                        </LinearLayout>
+
+                        <!-- Weekly Streak -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvWeeklyStreak"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🔥 Current Streak: 12 days"
+                                android:textSize="12sp"
+                                android:textColor="@color/accent"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Action Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/btnExportData"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_rounded_enhanced"
+                    android:text="📤 Export Data"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:padding="12dp"
+                    tools:ignore="ButtonStyle,HardcodedText,TextContrastCheck,VisualLintButtonSize" />
+
+                <Button
+                    android:id="@+id/btnShareInsights"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:text="📊 Share Insights"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/button_rounded_accent_enhanced"
+                    android:textColor="@color/white"
+                    android:padding="12dp"
+                    android:layout_marginStart="8dp"
+                    tools:ignore="ButtonStyle,HardcodedText,VisualLintButtonSize" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

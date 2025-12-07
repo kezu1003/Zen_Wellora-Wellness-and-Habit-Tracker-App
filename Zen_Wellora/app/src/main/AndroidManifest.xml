@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Permissions for hydration reminders -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.BODY_SENSORS" /> <!-- Optional: For step counter on older devices -->
+    <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" /> <!-- Feature declarations for sensors -->
+    
+    <!-- Permissions for image picker -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.sensor.stepcounter"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.sensor.stepdetector"
+        android:required="false" />
+
+    <application
+        android:name=".ZenWelloraApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Zen_Wellora">
+
+        <!-- Widget Configuration Activity -->
+        <activity
+            android:name=".Widget_configure"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <!-- Widget Provider -->
+        <receiver
+            android:name=".HabitWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/habit_widget_info" />
+        </receiver>
+
+        <!-- Remove HabitWidget from activities since it's a BroadcastReceiver -->
+        <!-- Remove this line: <activity android:name=".HabitWidget" android:exported="false" /> -->
+
+        <activity
+            android:name=".ChartUtils"
+            android:exported="false"
+            tools:ignore="MissingClass" /> <!-- Register Broadcast Receiver for hydration actions -->
+        <receiver
+            android:name=".HydrationActionReceiver"
+            android:exported="false" />
+        
+        <!-- Register Broadcast Receiver for hydration alarms -->
+        <receiver
+            android:name=".HydrationAlarmReceiver"
+            android:exported="false" /> <!-- Keep only actual Activities -->
+        <activity
+            android:name=".Habit"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".Fragment_charts_statistics"
+            android:exported="false" />
+        <activity
+            android:name=".Fragment_sensor_integration"
+            android:exported="false" />
+        <!-- Remove duplicate Widget_configure activity declaration -->
+        <!-- <activity android:name=".Widget_configure" android:exported="false" /> -->
+        <activity
+            android:name=".Widget_zen_wellness"
+            android:exported="false" />
+        <activity
+            android:name=".Dialog_edit_profile"
+            android:exported="false" />
+        <activity
+            android:name=".Fragment_user_profile"
+            android:exported="false" />
+        <activity
+            android:name=".Dialog_quick_guide"
+            android:exported="false" />
+        <activity
+            android:name=".fragment_about_help"
+            android:exported="false" />
+        <activity
+            android:name=".Dialog_advanced_water"
+            android:exported="false" />
+        <activity
+            android:name=".Dialog_advanced_habit"
+            android:exported="false" />
+        <activity
+            android:name=".Fragment_notification_management"
+            android:exported="false" />
+        <activity
+            android:name=".Dialog_time_picker"
+            android:exported="false" />
+        <activity
+            android:name=".Fragment_hydration_reminder"
+            android:exported="false" />
+        <activity
+            android:name=".Dialog_confirm_action"
+            android:exported="false" />
+        <activity
+            android:name=".Dialog_notification_times"
+            android:exported="false" />
+        <activity
+            android:name=".Fragment_settings"
+            android:exported="false" />
+        <activity
+            android:name=".Dialog_date_filter"
+            android:exported="false" />
+        <activity
+            android:name=".Fragment_mood_calendar"
+            android:exported="false" />
+        <activity
+            android:name=".Dialog_mood_entry"
+            android:exported="false" />
+        <activity
+            android:name=".Fragment_mood_journal"
+            android:exported="false" />
+        <activity
+            android:name=".dialog_add_habit"
+            android:exported="false" />
+        <activity
+            android:name=".DailyHabitTracker"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false" />
+        <activity
+            android:name=".Resetpassword"
+            android:exported="false" />
+        <activity
+            android:name=".Signup"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".Selection"
+            android:exported="false" /> <!-- Welcome is the launcher activity -->
+        <activity
+            android:name=".Welcome"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

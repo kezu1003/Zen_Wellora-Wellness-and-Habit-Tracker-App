@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_recent_activity"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="#FFFFFF"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/iv_activity_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="Activity Icon"
+            android:src="@drawable/check_circle"
+            app:tint="#48BB78"
+            tools:ignore="HardcodedText,ImageContrastCheck" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/tv_activity_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Activity Title"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#2D3748"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tv_activity_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Activity Description"
+                android:textSize="12sp"
+                android:textColor="#718096"
+                android:layout_marginTop="2dp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tv_activity_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 hours ago"
+                android:textSize="12sp"
+                android:textColor="#718096"
+                android:layout_marginTop="2dp"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_activity_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+10 pts"
+            android:textColor="#FF6B9D"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:ignore="HardcodedText,TextContrastCheck" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+

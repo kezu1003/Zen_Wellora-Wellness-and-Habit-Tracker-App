@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Widget_zen_wellness">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/widget_background"
+        android:padding="16dp">
+
+        <!-- App Header -->
+        <TextView
+            android:id="@+id/widget_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🌿 Zen Wellora"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            tools:ignore="HardcodedText" />
+
+        <!-- Main Progress Circle -->
+        <RelativeLayout
+            android:id="@+id/progress_container"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+
+            <!-- Circular Progress Background -->
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/circle_progress_background"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
+
+            <!-- Progress Fill (Will be animated) -->
+            <ImageView
+                android:id="@+id/progress_fill"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:rotation="-90"
+                android:src="@drawable/circle_progress_fill"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
+
+            <!-- Inner Circle -->
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:background="@drawable/circle_inner_background"
+                android:text="75%"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"
+                tools:ignore="HardcodedText" />
+
+        </RelativeLayout>
+
+        <!-- Completion Text -->
+        <TextView
+            android:id="@+id/completion_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/progress_container"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="Daily Habits Completed"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            tools:ignore="HardcodedText,TextContrastCheck" />
+
+        <!-- Habit Stats -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/completed_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6"
+                    android:textColor="@color/success"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,TextContrastCheck" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Done"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp"
+                    tools:ignore="HardcodedText,SmallSp,TextContrastCheck" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:background="@color/primary_light" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/total_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp"
+                    tools:ignore="HardcodedText,SmallSp,TextContrastCheck" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:background="@color/primary_light" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/streak_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7"
+                    android:textColor="@color/accent"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,TextContrastCheck" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Streak"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp"
+                    tools:ignore="HardcodedText,SmallSp,TextContrastCheck" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Last Updated Time -->
+        <TextView
+            android:id="@+id/last_updated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:text="Updated: 2 min ago"
+            android:textColor="@color/text_hint"
+            android:textSize="10sp"
+            tools:ignore="HardcodedText,SmallSp,TextContrastCheck" />
+
+        <!-- Refresh Button -->
+        <ImageButton
+            android:id="@+id/refresh_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/circle_widget_button"
+            android:contentDescription="Refresh"
+            android:src="@drawable/ic_refresh"
+            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+        <!-- App Launch Button -->
+        <ImageButton
+            android:id="@+id/launch_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/circle_widget_button"
+            android:contentDescription="Open App"
+            android:src="@drawable/ic_launch"
+            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DailyHabitTracker">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F8F9FF">
+
+        <!-- Main Content -->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="80dp">
+
+                <!-- Header Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/header_gradient_background"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="24dp"
+                    android:paddingTop="40dp"
+                    android:paddingBottom="24dp">
+
+                    <!-- Top Bar -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="20dp">
+
+                        <ImageView
+                            android:id="@+id/iv_back"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:contentDescription="@string/back_button"
+                            android:focusable="true"
+                            android:padding="4dp"
+                            android:src="@drawable/ic_arrow_back_white"
+                            tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/habit_tracker"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"
+                            android:gravity="center"
+                            android:layout_marginEnd="24dp" />
+
+                    </LinearLayout>
+
+                    <!-- Daily Progress Summary Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="6dp"
+                        app:cardBackgroundColor="#FFFFFF">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="20dp"
+                            android:gravity="center_vertical">
+
+                            <!-- Progress Circle -->
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                app:cardCornerRadius="40dp"
+                                app:cardElevation="0dp"
+                                app:cardBackgroundColor="#E6E8FF">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/tv_daily_percentage"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="75%"
+                                        android:textSize="20sp"
+                                        android:textStyle="bold"
+                                        android:textColor="#6B73FF"
+                                        tools:ignore="HardcodedText,TooDeepLayout" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/today"
+                                        android:textColor="#6B73FF"
+                                        android:textSize="11sp"
+                                        tools:ignore="TextContrastCheck" />
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <!-- Progress Details -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_marginStart="20dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_marginBottom="8dp">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/habits_completed_today"
+                                        android:textColor="#718096"
+                                        android:textSize="14sp"
+                                        tools:ignore="TextContrastCheck" />
+
+                                    <TextView
+                                        android:id="@+id/tv_habit_progress"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="6/8"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold"
+                                        android:textColor="#2D3748"
+                                        tools:ignore="HardcodedText" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/best_streak"
+                                        android:textColor="#718096"
+                                        android:textSize="14sp"
+                                        tools:ignore="TextContrastCheck" />
+
+                                    <TextView
+                                        android:id="@+id/tv_best_streak"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="15 days"
+                                        android:textColor="#FF6B9D"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        tools:ignore="HardcodedText,TextContrastCheck" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <!-- Date Navigation -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:id="@+id/iv_prev_day"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:contentDescription="Previous Day"
+                        android:focusable="true"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_chevron_left"
+                        app:tint="#6B73FF"
+                        tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+                    <TextView
+                        android:id="@+id/tv_selected_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Today, Dec 19"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#2D3748"
+                        android:gravity="center"
+                        tools:ignore="HardcodedText" />
+
+                    <ImageView
+                        android:id="@+id/iv_next_day"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:contentDescription="Next Day"
+                        android:focusable="true"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#6B73FF"
+                        tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+                </LinearLayout>
+
+                <!-- Habits List Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp">
+
+                    <!-- Section Header -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/daily_habits"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#2D3748" />
+
+                        <TextView
+                            android:id="@+id/tv_edit_habits"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:padding="8dp"
+                            android:text="@string/edit"
+                            android:textColor="#6B73FF"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                    </LinearLayout>
+
+                    <!-- Habits RecyclerView -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_habits"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        tools:listitem="@layout/activity_item_habit"
+                        tools:itemCount="5" />
+
+                    <!-- Empty State -->
+                    <LinearLayout
+                        android:id="@+id/ll_empty_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="40dp"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/ic_habits_empty"
+                            android:layout_marginBottom="16dp"
+                            app:tint="#E6E8FF"
+                            android:contentDescription="No Habits"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/no_habits_yet"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#2D3748"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/add_your_first_habit"
+                            android:textSize="14sp"
+                            android:textColor="#718096"
+                            android:gravity="center"
+                            android:layout_marginBottom="20dp" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_add_first_habit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="0dp"
+                            app:cardBackgroundColor="@android:color/transparent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/gradient_button_background"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                android:paddingHorizontal="24dp"
+                                android:paddingVertical="12dp">
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:src="@drawable/ic_add_white"
+                                    android:layout_marginEnd="8dp"
+                                    android:contentDescription="Add"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/add_habit"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- Floating Action Button -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_habit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/add_habit"
+            android:src="@drawable/ic_add_white"
+            app:backgroundTint="#FF6B9D"
+            app:elevation="6dp"
+            app:pressedTranslationZ="8dp"
+            app:tint="#FFFFFF"
+            tools:ignore="ImageContrastCheck" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment_settings">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_primary"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Header with Back Arrow -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp">
+
+                <!-- Back Arrow -->
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/back_arrow"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="Back"
+                    android:tint="@color/primary"
+                    tools:ignore="HardcodedText" />
+
+                <!-- Title -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Settings"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    tools:ignore="HardcodedText" />
+
+            </RelativeLayout>
+
+            <!-- Hydration Reminder Section -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="💧 Hydration Reminder"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_marginBottom="16dp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Enable/Disable Toggle -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Enable Reminders"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            tools:ignore="HardcodedText" />
+
+                        <Switch
+                            android:id="@+id/switchHydrationReminder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:thumbTint="@color/white"
+                            android:trackTint="@color/primary_light"
+                            tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                    <!-- Reminder Interval -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Reminder Interval"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText,TextContrastCheck" />
+
+                    <Spinner
+                        android:id="@+id/spinnerInterval"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/spinner_background"
+                        android:padding="12dp"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <!-- Notification Times -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Daily Reminder Times"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText,TextContrastCheck" />
+
+                    <Button
+                        android:id="@+id/btnManageTimes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/primary_light"
+                        android:text="⏰ Manage Notification Times"
+                        android:textColor="@color/primary"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- App Preferences Section -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="⚙️ App Preferences"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_marginBottom="16dp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Theme Selection -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="App Theme"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="8dp"
+                        tools:ignore="HardcodedText" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <RadioButton
+                            android:id="@+id/radioLight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Light Theme"
+                            android:textColor="@color/text_primary"
+                            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+                        <RadioButton
+                            android:id="@+id/radioDark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Dark Theme"
+                            android:textColor="@color/text_primary"
+                            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+                        <RadioButton
+                            android:id="@+id/radioSystem"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="System Default"
+                            android:textColor="@color/text_primary"
+                            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+                    </RadioGroup>
+
+                    <!-- Notification Preferences -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Notification Preferences"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="8dp"
+                        tools:ignore="HardcodedText" />
+
+                    <CheckBox
+                        android:id="@+id/cbVibration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Enable Vibration"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="8dp"
+                        tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+                    <CheckBox
+                        android:id="@+id/cbSound"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Enable Sound"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="16dp"
+                        tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Data Management Section -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="📊 Data Management"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_marginBottom="16dp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Export Data -->
+                    <Button
+                        android:id="@+id/btnExportData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="📤 Export Data"
+                        android:textSize="14sp"
+                        android:backgroundTint="@color/primary_light"
+                        android:textColor="@color/primary"
+                        android:layout_marginBottom="8dp"
+                        tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+                    <!-- Clear Data -->
+                    <Button
+                        android:id="@+id/btnClearData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="🗑️ Clear All Data"
+                        android:textSize="14sp"
+                        android:backgroundTint="@color/accent_light"
+                        android:textColor="@color/accent_dark"
+                        android:layout_marginBottom="8dp"
+                        tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+                    <!-- App Info -->
+                    <TextView
+                        android:id="@+id/tvAppInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="App Version: 1.0.0"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_hint"
+                        android:gravity="center"
+                        android:layout_marginTop="8dp"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Save Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSaveSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gradient_button_background"
+                android:text="💾 Save Settings"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="8dp"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

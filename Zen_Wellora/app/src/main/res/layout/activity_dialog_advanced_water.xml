@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dialog_advanced_water">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_primary"
+        android:padding="16dp"
+        android:fillViewport="true"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="💧 Advanced Water Settings"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+                tools:ignore="HardcodedText" />
+
+            <!-- Custom Message -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Custom Message"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/etWaterMessage"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/edittext_border_zen"
+                android:gravity="top"
+                android:hint="Time to drink water! Stay hydrated 💧"
+                android:inputType="textMultiLine"
+                android:padding="12dp"
+                tools:ignore="Autofill,HardcodedText,TextContrastCheck,VisualLintTextFieldSize" />
+
+            <!-- Notification Duration -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Notification Duration"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp"
+                tools:ignore="HardcodedText" />
+
+            <SeekBar
+                android:id="@+id/seekBarWaterDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="60"
+                android:progress="30"
+                android:progressTint="@color/accent"
+                android:thumbTint="@color/accent"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvWaterDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="30 seconds"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                tools:ignore="HardcodedText,TextContrastCheck" />
+
+            <!-- Snooze Options -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Snooze Options"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp"
+                tools:ignore="HardcodedText" />
+
+            <CheckBox
+                android:id="@+id/cbEnableSnooze"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enable Snooze"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Snooze Duration"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                tools:ignore="HardcodedText,TextContrastCheck" />
+
+            <Spinner
+                android:id="@+id/spinnerSnoozeDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/spinner_background"
+                android:padding="12dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <!-- Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnCancelAdvanced"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_cancel"
+                    android:text="Cancel"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="12dp"
+                    tools:ignore="ButtonStyle,HardcodedText,TextContrastCheck,VisualLintButtonSize" />
+
+                <Button
+                    android:id="@+id/btnSaveAdvanced"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_save"
+                    android:text="Save"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="12dp"
+                    tools:ignore="ButtonStyle,HardcodedText,VisualLintButtonSize" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
